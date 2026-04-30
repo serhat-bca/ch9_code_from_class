@@ -1,7 +1,12 @@
+import { useCreate } from "../hooks/useCreate";
+
 const TaskForm = () => {
+  const { mutate, isPending } = useCreate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Task Submitted");
+    mutate({ description: event.target.description.value, urgent: false });
+    event.target.description.value = "";
   };
 
   return (
@@ -13,7 +18,9 @@ const TaskForm = () => {
           name="description"
           placeholder="Enter task Description"
         />
-        <button type="submit">Add Task</button>
+        <button disabled={isPending} type="submit">
+          {isPending ? "Adding" : "Add Task"}
+        </button>
       </form>
     </div>
   );
