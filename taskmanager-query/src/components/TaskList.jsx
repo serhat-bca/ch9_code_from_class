@@ -1,13 +1,8 @@
 import Task from "./Task";
-import { useQuery } from "@tanstack/react-query";
-import { fetchTasks } from "../services/api";
+import { useTasks } from "../hooks/useTasks";
 
 const TaskList = () => {
-  const {
-    data: tasks,
-    isLoading,
-    isError,
-  } = useQuery({ queryKey: ["tasks"], queryFn: fetchTasks });
+  const { data: tasks, isLoading, isError } = useTasks();
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error Loading data...</p>;
