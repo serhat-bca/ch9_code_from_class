@@ -18,16 +18,26 @@
     {
       "id": "4",
       "description": "Pay Internet Bill",
-      "urgent": true
+      "urgent": false
     },
     {
       "id": "31d4",
       "description": "a task with mutation",
-      "urgent": false
+      "urgent": true
     },
     {
       "id": "4c93",
       "description": "isPending Test",
+      "urgent": true
+    },
+    {
+      "id": "bf4d",
+      "description": "test task",
+      "urgent": false
+    },
+    {
+      "id": "258d",
+      "description": "another task",
       "urgent": false
     }
   ]

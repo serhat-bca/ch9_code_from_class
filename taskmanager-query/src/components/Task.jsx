@@ -1,4 +1,7 @@
+import { useToggle } from "../hooks/useToggle";
+
 const Task = ({ task }) => {
+  const {mutate} = useToggle();
   return (
     <div>
       <span>{task.description}. </span>
@@ -7,7 +10,7 @@ const Task = ({ task }) => {
       </span>
       <span
         style={{ textDecoration: "underline", cursor: "pointer" }}
-        onClick={() => console.log(task.id)}
+        onClick={() => mutate({...task, urgent: !task.urgent})}
       >
         {task.urgent ? "Make non-urgent" : "make urgent"}
       </span>
